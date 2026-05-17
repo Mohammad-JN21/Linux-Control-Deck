@@ -1,0 +1,202 @@
+❯ wpctl status
+
+PipeWire 'pipewire-0' [1.6.4, judi@Judi-LINUX, cookie:251600443]
+
+└─ Clients:
+
+       32. WirePlumber                         [1.6.4, judi@Judi-LINUX, pid:1286]
+
+       33. pipewire                            [1.6.4, judi@Judi-LINUX, pid:1287]
+
+       35. linux-arctis-manager                [1.6.4, judi@Judi-LINUX, pid:1236]
+
+       47. WirePlumber [export]                [1.6.4, judi@Judi-LINUX, pid:1286]
+
+       48. kwin_wayland                        [1.6.4, judi@Judi-LINUX, pid:1244]
+
+      130. pipewire                            [1.6.4, judi@Judi-LINUX, pid:1287]
+
+      132. pipewire                            [1.6.4, judi@Judi-LINUX, pid:1287]
+
+      139. pipewire                            [1.6.4, judi@Judi-LINUX, pid:1287]
+
+      141. pipewire                            [1.6.4, judi@Judi-LINUX, pid:1287]
+
+      152. libcanberra                         [1.6.4, judi@Judi-LINUX, pid:1382]
+
+      169.                                     [1.6.4, judi@Judi-LINUX, pid:1382]
+
+      170. plasmashell                         [1.6.4, judi@Judi-LINUX, pid:1402]
+
+      171. libcanberra                         [1.6.4, judi@Judi-LINUX, pid:1402]
+
+      174.                                     [1.6.4, judi@Judi-LINUX, pid:1402]
+
+      175. xdg-desktop-portal                  [1.6.4, judi@Judi-LINUX, pid:1251]
+
+      178. Steam Voice Settings                [1.6.4, judi@Judi-LINUX, pid:2547]
+
+      179. Steam                               [1.6.4, judi@Judi-LINUX, pid:2547]
+
+      189. Chromium input                      [1.6.4, judi@Judi-LINUX, pid:4012]
+
+      191. Chromium input                      [1.6.4, judi@Judi-LINUX, pid:60257]
+
+      192. Vivaldi                             [1.6.4, judi@Judi-LINUX, pid:67399]
+
+      209. Dolphin                             [1.6.4, judi@Judi-LINUX, pid:31021]
+
+      218. discord_capture                     [1.6.4, judi@Judi-LINUX, pid:35653]
+
+      235. WEBRTC VoiceEngine                  [1.6.4, judi@Judi-LINUX, pid:35653]
+
+      248. Chromium input                      [1.6.4, judi@Judi-LINUX, pid:34741]
+
+      249.                                     [1.6.4, judi@Judi-LINUX, pid:1382]
+
+      255. WEBRTC VoiceEngine                  [1.6.4, judi@Judi-LINUX, pid:35653]
+
+      260. wpctl                               [1.6.4, judi@Judi-LINUX, pid:72190]
+
+      273. Vivaldi input                       [1.6.4, judi@Judi-LINUX, pid:67399]
+
+      276. Discord                             [1.6.4, judi@Judi-LINUX, pid:35653]
+
+
+
+Audio
+
+├─ Devices:
+
+│      49. GA102 High Definition Audio Controller [alsa]
+
+│      50. Webcam C270                         [alsa]
+
+│      51. Radeon High Definition Audio Controller [alsa]
+
+│      52. Ryzen HD Audio Controller           [alsa]
+
+│      53. Arctis Nova Pro Wireless            [alsa]
+
+│
+
+├─ Sinks:
+
+│      43. Ryzen HD Audio Controller Digital Stereo (IEC958) [vol: 0.40]
+
+│      44. Radeon High Definition Audio Controller Pro 8 [vol: 1.00]
+
+│      45. Radeon High Definition Audio Controller Pro 7 [vol: 1.00]
+
+│      46. Radeon High Definition Audio Controller Pro [vol: 1.00]
+
+│      60. GA102 High Definition Audio Controller Digital Stereo (HDMI) [vol: 0.40]
+
+│  *   64. Arctis Nova Pro Wireless Analog Stereo [vol: 1.00]
+
+│     131. SteelSeries Arctis Nova Pro Wireless Media [vol: 0.80]
+
+│     140. SteelSeries Arctis Nova Pro Wireless Chat [vol: 1.00]
+
+│
+
+├─ Sources:
+
+│  *   34. Webcam C270 Mono                    [vol: 1.00]
+
+│      63. Ryzen HD Audio Controller Analog Stereo [vol: 1.00]
+
+│      65. Arctis Nova Pro Wireless Mono       [vol: 1.00]
+
+│
+
+├─ Filters:
+
+│    - loopback-1287-13
+
+│     133. output.loopback-1287-13                                      [Stream/Output/Audio]
+
+│     134. input.loopback-1287-13                                       [Stream/Input/Audio]
+
+│    - loopback-1287-14
+
+│     142. output.loopback-1287-14                                      [Stream/Output/Audio]
+
+│     143. input.loopback-1287-14                                       [Stream/Input/Audio]
+
+│
+
+└─ Streams:
+
+      177. WEBRTC VoiceEngine
+
+           231. monitor_MONO
+
+           262. input_MONO      < Arctis Nova Pro Wireless:capture_MONO        [active]
+
+      181. discord_capture
+
+           190. input_FR        < Vivaldi:output_FR    [active]
+
+           254. input_FL        < Vivaldi:output_FL    [active]
+
+           280. monitor_FL
+
+           283. monitor_FR
+
+      234. WEBRTC VoiceEngine
+
+           199. output_FR       > SteelSeries Arctis Nova Pro Wireless Chat:playback_FR        [active]
+
+           202. output_FL       > SteelSeries Arctis Nova Pro Wireless Chat:playback_FL        [active]
+
+      285. Vivaldi
+
+           203. output_FL       > SteelSeries Arctis Nova Pro Wireless Media:playback_FL       [active]
+
+           266. output_FR       > discord_capture:input_FR     [active]
+
+
+
+Video
+
+├─ Devices:
+
+│      61. C270 HD WEBCAM                      [v4l2]
+
+│      62. C270 HD WEBCAM                      [v4l2]
+
+│
+
+├─ Sinks:
+
+│
+
+├─ Sources:
+
+│  *  172. C270 HD WEBCAM (V4L2)
+
+│
+
+├─ Filters:
+
+│
+
+└─ Streams:
+
+      278. Discord
+
+           281. input_1         < kwin_wayland:output_1        [active]
+
+      282. kwin_wayland
+
+           268. output_1        > Discord:input_1      [active]
+
+
+
+Settings
+
+└─ Default Configured Devices:
+
+        0. Audio/Sink    alsa_output.usb-SteelSeries_Arctis_Nova_Pro_Wireless-00.analog-stereo
+
