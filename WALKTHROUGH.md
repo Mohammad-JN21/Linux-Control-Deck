@@ -138,3 +138,5 @@ A user-level systemd service was created to keep the deck running permanently on
 
 **You can now access the Control Deck securely and permanently at:**
 `http://localhost:3001` (or your PC's Tailscale IP address at port 3001)
+
+Test push
