@@ -46,7 +46,7 @@ If you ever edit the Vue (`.vue`) files in the `client` folder, you must rebuild
 1. Open your terminal.
 2. Go to the client folder:
    ```bash
-   cd /home/judi/.gemini/antigravity/scratch/control-deck/client
+   cd /home/judi/control-deck/client
    ```
 3. Build the frontend:
    ```bash

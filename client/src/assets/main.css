@@ -237,7 +237,7 @@ body {
 
 /* ── Touch Optimizations ──────────────────────────────────────── */
 @media (pointer: coarse) {
-  button, [role="button"], [role="slider"], [data-slot="slider-thumb"] {
+  button, [role="button"] {
     min-height: 44px;
     min-width: 44px;
   }
@@ -254,6 +254,17 @@ body {
   height: 20px !important;
   cursor: grab;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+}
+
+/* Expand touch target for mobile without making visual dot huge */
+[data-slot="slider-thumb"]::after {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  bottom: -15px;
+  left: -15px;
 }
 
 [data-slot="slider-thumb"]:active {

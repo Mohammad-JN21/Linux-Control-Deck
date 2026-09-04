@@ -12,10 +12,9 @@ const { executeScript, scriptResult, saveClip, clipResult } = useSocket()
 // ── Button Configuration ──
 // Labels are user-facing; names match the backend script filenames
 const buttons = ref([
-  { name: 'steam_tv',    label: 'Steam Big Picture', icon: Gamepad2,      color: '#818cf8' },
-  { name: 'tv_only',     label: 'TV Only',           icon: Tv,            color: '#34d399' },
-  { name: 'desk_mode',   label: 'Desk Mode',         icon: Monitor,       color: '#fbbf24' },
-  { name: 'movie_mode',  label: 'Movie Mode',        icon: Clapperboard,  color: '#f472b6' },
+  { name: 'gaming_mode',   label: 'Gaming Mode',       icon: Gamepad2,      color: '#c084fc' },
+  { name: 'desk_mode',     label: 'Desk Mode',         icon: Monitor,       color: '#fbbf24' },
+  { name: 'discord_watch', label: 'Discord Watch',     icon: Tv,            color: '#10b981' },
 ])
 
 const runningScript = ref(null)
@@ -86,11 +85,12 @@ function getResultState(scriptName) {
     </div>
 
     <!-- Gameplay Replay Section -->
-    <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground mt-6 mb-3">
-      🎮 Gameplay Replay
-    </p>
+    <div class="mt-auto pt-6">
+      <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground mb-3">
+        🎮 Gameplay Replay
+      </p>
 
-    <div class="grid grid-cols-2 gap-3">
+      <div class="grid grid-cols-2 gap-3">
       <!-- 30s Clip -->
       <Card class="group relative cursor-pointer transition-all duration-200 active:scale-[0.96] hover:shadow-lg border-0 !py-0"
             :class="{ 'opacity-60 pointer-events-none': clipResult.loading }"
@@ -130,6 +130,7 @@ function getResultState(scriptName) {
           </span>
         </CardContent>
       </Card>
+    </div>
     </div>
   </div>
 </template>

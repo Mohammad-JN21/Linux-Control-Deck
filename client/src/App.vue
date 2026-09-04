@@ -107,20 +107,22 @@ const { isDark, toggleTheme } = useTheme()
 @media (max-width: 1025px) {
   .app-shell {
     padding: 16px;
-    padding-top: 64px;
+    padding-top: 80px;
+    height: 100dvh;
     overflow-y: auto;
   }
 
   .deck-layout {
-    grid-template-rows: auto auto auto auto;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: none;
   }
 
   .deck-middle {
-    grid-template-columns: 1fr;
-  }
-
-  .deck-bottom {
-    max-height: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 }
 </style>

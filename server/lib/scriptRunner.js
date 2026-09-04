@@ -1,7 +1,34 @@
-import { execFile } from 'node:child_process';
+import { execFile, exec } from 'node:child_process';
 import { readdir, access, constants } from 'node:fs/promises';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { promisify } from 'node:util';
+
+const execAsync = promisify(exec);
+
+/**
+ * Fetch graphical environment variables from the user's systemd session.
+ * Since Plasma imports DISPLAY and WAYLAND_DISPLAY into systemd --user on login,
+ * querying systemd guarantees we get the active session variables even if the service
+ * started before the graphical session was active.
+ */
+async function getSystemdEnv() {
+  try {
+    const { stdout } = await execAsync('systemctl --user show-environment');
+    const env = {};
+    for (const line of stdout.split('\n')) {
+      const match = line.match(/^([^=]+)=(.*)$/);
+      if (match) {
+        env[match[1]] = match[2].trim();
+      }
+    }
+    return env;
+  } catch (err) {
+    console.error('[scriptRunner] Failed to fetch systemd user environment:', err);
+    return {};
+  }
+}
+
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SCRIPTS_DIR = resolve(__dirname, '..', 'scripts');
@@ -39,11 +66,13 @@ export async function runScript(scriptName) {
     return { success: false, output: '', error: `Script "${scriptName}" not found` };
   }
 
+  const systemdEnv = await getSystemdEnv();
+
   return new Promise((resolve) => {
     execFile('bash', [scriptPath], {
       timeout: 30000, // 30s timeout
       cwd: SCRIPTS_DIR,
-      env: { ...process.env, DISPLAY: process.env.DISPLAY || ':0' },
+      env: { ...process.env, ...systemdEnv },
     }, (error, stdout, stderr) => {
       if (error) {
         resolve({

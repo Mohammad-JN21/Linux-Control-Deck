@@ -78,17 +78,6 @@ app.get('/api/voice/clip', async (req, res) => {
   }
 });
 
-app.get('/api/voice/mode-movie', async (req, res) => {
-  console.log('[voice] Triggered: movie_mode');
-  try {
-    await runScript('movie_mode');
-    res.status(200).send('OK');
-  } catch (err) {
-    console.error('[voice] Error running movie_mode:', err.message);
-    res.status(500).send(err.message);
-  }
-});
-
 app.get('/api/voice/mode-desk', async (req, res) => {
   console.log('[voice] Triggered: desk_mode');
   try {
@@ -101,23 +90,12 @@ app.get('/api/voice/mode-desk', async (req, res) => {
 });
 
 app.get('/api/voice/mode-gaming', async (req, res) => {
-  console.log('[voice] Triggered: steam_tv');
+  console.log('[voice] Triggered: gaming_mode');
   try {
-    await runScript('steam_tv');
+    await runScript('gaming_mode');
     res.status(200).send('OK');
   } catch (err) {
-    console.error('[voice] Error running steam_tv:', err.message);
-    res.status(500).send(err.message);
-  }
-});
-
-app.get('/api/voice/mode-tv', async (req, res) => {
-  console.log('[voice] Triggered: tv_only');
-  try {
-    await runScript('tv_only');
-    res.status(200).send('OK');
-  } catch (err) {
-    console.error('[voice] Error running tv_only:', err.message);
+    console.error('[voice] Error running gaming_mode:', err.message);
     res.status(500).send(err.message);
   }
 });
